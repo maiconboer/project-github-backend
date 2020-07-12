@@ -2,6 +2,9 @@ const express = require('express')
 const routes = express.Router()
 const starredRepositories = require('./controllers/starredRepositories')
 
+routes.get('/test', (req, res) => {
+  return res.json({ message: 'Api funcionando'})
+} )
 routes.get('/starred-repositories', starredRepositories.index)
 routes.get('/starred-repositories/:filter/:id', starredRepositories.findby)
 routes.post('/starred-repositories', starredRepositories.post)
