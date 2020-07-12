@@ -5,12 +5,7 @@ const routes = require('./routes')
 const methodOverride = require('method-override')
 
 const server = express()
-server.all('*', function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
+server.use(cors())
 
 server.use(express.urlencoded({ extended: true }))
 
