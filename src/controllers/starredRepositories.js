@@ -2,6 +2,7 @@
 const StarredRepositories = require('../models/StarredRepositories')
 
 module.exports = {
+
   async index(req, res) {   
     try {
       const results = await StarredRepositories.all();
@@ -11,8 +12,6 @@ module.exports = {
     } catch (error) {
       return res.status(404).json({ message: error });
     }
-
-    
   },
 
   async findby(req, res) {
@@ -25,7 +24,6 @@ module.exports = {
     } catch (error) {
       return res.status(404).json({ message: error });
     }
-    
   },
 
   async post(req, res) {
